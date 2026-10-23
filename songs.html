@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>If You Were A Song ♪</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="songs-page">
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation Header (Back Link Only) -->
+  <nav class="playlist-top-nav" aria-label="Page Navigation">
+    <div class="nav-left-group">
+      <a href="reasons.html" class="page-nav-back">
+        <span>← Back</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content Area: Poster / Music Player Scene -->
+  <main class="main-wrapper">
+    <section class="screen playlist-poster-screen active" id="musicScreen">
+      
+      <!-- Left Section: Vinyl Semicircle touching left screen edge & Semicircular Playback Bar -->
+      <div class="playlist-left-section">
+        <div class="semicircle-vinyl-wrapper">
+          
+          <!-- Semicircular Progress Arc Outline (100% inside screen, outlining vinyl semicircle) -->
+          <svg class="semicircle-progress-svg" viewBox="0 0 220 420">
+            <!-- Background Track Arc -->
+            <path d="M 0 12 A 198 198 0 0 1 0 408" class="semicircle-progress-track"/>
+            <!-- Active Progress Arc -->
+            <path id="semicircleProgressFill" d="M 0 12 A 198 198 0 0 1 0 408" class="semicircle-progress-fill"/>
+            <!-- Scrubber Indicator Dot -->
+            <circle id="semicircleProgressDot" cx="0" cy="12" r="8" class="semicircle-progress-dot"/>
+          </svg>
+
+          <!-- Vinyl Disc Container (Positioned at left: 0 so right half forms visible semicircle) -->
+          <div class="vinyl-disc-container">
+            <div class="vinyl-disc-spin" id="vinylDiscSpin">
+              <div class="vinyl-reflection-overlay"></div>
+              <div class="vinyl-groove-ring ring-1"></div>
+              <div class="vinyl-groove-ring ring-2"></div>
+              <div class="vinyl-groove-ring ring-3"></div>
+              <div class="vinyl-center-label" id="spotifyArtBox">
+                <!-- Cover art populated dynamically by script.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Play / Pause Controls Floating Near Semicircle -->
+          <div class="vinyl-play-controls">
+            <button class="audio-play-btn" id="audioPlayBtn" type="button" aria-label="Play or Pause Song">
+              <svg class="play-icon" id="playIconSvg" viewBox="0 0 24 24" fill="#EEDCC8">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <svg class="pause-icon" id="pauseIconSvg" viewBox="0 0 24 24" fill="#EEDCC8" style="display: none;">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+            <div class="audio-time-badge">
+              <span id="audioCurrentTime">0:00</span> / <span id="audioDuration">0:00</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="audio-error-message" id="audioErrorMessage" style="display: none;">
+          <span>This song isn't available yet ♡</span>
+        </div>
+      </div>
+
+      <!-- Center Section: Heading & 6 Song Cards -->
+      <div class="playlist-center-section">
+        <div class="playlist-header">
+          <h1 class="playlist-title">PLAYLIST!</h1>
+          <div class="playlist-title-underline"></div>
+        </div>
+
+        <!-- 6 Songs Selector List -->
+        <div class="song-tabs-list" id="songTabsList" role="tablist">
+          <!-- Populated dynamically by script.js -->
+        </div>
+
+        <!-- Search Pill Accent -->
+        <div class="playlist-search-pill">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+          </svg>
+          <span class="song-remind-note">♡ THIS REMINDS ME OF YOU</span>
+        </div>
+      </div>
+
+      <!-- Right Section: Selected Song Lyric Quote Display -->
+      <div class="playlist-right-section">
+        <div class="lyric-quote-card" id="spotifyLyricCard">
+          <div class="lyric-quote-header">
+            <span class="lyric-badge">LYRICS</span>
+            <span class="equalizer-bars" aria-hidden="true">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+            </span>
+          </div>
+
+          <div class="lyric-quote-body">
+            <p class="lyric-quote-text" id="spotifyLyricText">
+              <!-- Lyrics populated dynamically by script.js -->
+            </p>
+          </div>
+
+          <div class="lyric-quote-footer">
+            <h3 class="lyric-song-title" id="spotifySongTitle">Sailor Song</h3>
+            <p class="lyric-song-artist" id="spotifyArtist">Gigi Perez</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Bottom-Right Corner Heart Navigation Button to Boyfriend Test (quiz.html) -->
+  <a href="quiz.html" class="heart-nav-next-btn bottom-right" id="goToQuizBtn" aria-label="Next Page: Boyfriend Test" title="Next: Boyfriend Test">
+    <svg class="heart-nav-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

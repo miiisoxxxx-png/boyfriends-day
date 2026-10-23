@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One More Thing... ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="one-more-thing-page">
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav" id="topNav" aria-label="Page Navigation">
+    <a href="open-when.html" class="page-nav-back">
+      <span>← Back</span>
+    </a>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- SECTION — ONE MORE THING... -->
+    <section class="screen finale-start-screen active" id="finaleStartScreen">
+      
+      <div class="finale-start-box" id="finaleStartBox">
+        <p class="finale-intro-tag">Just a moment...</p>
+        <h1 class="finale-title">One more thing...</h1>
+        
+        <div class="finale-btn-wrapper">
+          <button class="finale-trigger-btn" id="startFinaleBtn" type="button" aria-label="Click when you're ready">
+            <span>Click when you're ready ♡</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- CINEMATIC FINALE OVERLAY (Handles multi-step 5-8s transition) -->
+  <div class="finale-overlay" id="finaleOverlay" aria-hidden="true">
+    
+    <!-- Ambient particles for Step 5 -->
+    <div class="finale-particles-container" id="finaleParticles" aria-hidden="true"></div>
+
+    <!-- Step 3: Tiny Burgundy Heart with Soft Glow -->
+    <div class="finale-heart-center" id="finaleHeartCenter">
+      <svg class="finale-heart-svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- Step 4 & 5: Suspenseful Paced Text Messages -->
+    <div class="finale-message-box" id="finaleMessageBox">
+      <p class="finale-text-line" id="finaleText1" style="opacity: 0;">Wait...</p>
+      <p class="finale-text-line" id="finaleText2" style="opacity: 0; display: none;">I have one last question for you.</p>
+      <p class="finale-text-line" id="finaleText3" style="opacity: 0; display: none;">Okay...</p>
+      <p class="finale-text-line" id="finaleText4" style="opacity: 0; display: none;">Here goes...</p>
+    </div>
+
+    <!-- Step 6: Fullscreen Bright Cream Flash before page redirect -->
+    <div class="finale-flash-screen" id="finaleFlashScreen"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

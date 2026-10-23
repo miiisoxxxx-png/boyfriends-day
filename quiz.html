@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boyfriend Test ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav" aria-label="Page Navigation">
+    <a href="songs.html" class="page-nav-back">
+      <span>← Back</span>
+    </a>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- PAGE 5: BOYFRIEND TEST (MINI QUIZ) -->
+    <section class="screen quiz-screen active" id="quizScreen">
+      <div class="quiz-header">
+        <div class="tag-pill">
+          <svg class="mini-heart" viewBox="0 0 24 24" fill="#5D0703">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>Pop Quiz</span>
+        </div>
+        <h2 class="section-title">Boyfriend Test</h2>
+        <p class="quiz-subtitle">A tiny quiz about me eheheh</p>
+        <p class="quiz-treat-note">If you fail, I deserve a treat.</p>
+      </div>
+
+      <!-- Quiz Interactive Card Container -->
+      <div class="quiz-container">
+        
+        <!-- Active Question View -->
+        <div class="quiz-card" id="quizQuestionCard">
+          
+          <!-- Progress Header -->
+          <div class="quiz-progress-row">
+            <span class="quiz-counter-text" id="quizCounter">Question 1 / 9</span>
+            <div class="quiz-mini-track">
+              <div class="quiz-mini-fill" id="quizMiniFill"></div>
+            </div>
+          </div>
+
+          <!-- Question Prompt -->
+          <h3 class="quiz-question-title" id="quizQuestionTitle">What's my fav colour?</h3>
+
+          <!-- Options Grid -->
+          <div class="quiz-options-grid" id="quizOptionsGrid">
+            <!-- Populated dynamically by script.js -->
+          </div>
+
+        </div>
+
+        <!-- Quiz Result Card (Hidden initially) -->
+        <div class="quiz-result-card" id="quizResultCard" style="display: none;">
+          <div class="result-reaction-icon" id="resultReactionIcon">
+            <!-- Icon/Emoji based on score -->
+          </div>
+          <span class="result-label">RESULT:</span>
+          <div class="result-score-display" id="resultScoreDisplay">8 / 9</div>
+          <p class="result-message-text" id="resultMessageText">
+            <!-- Message based on score -->
+          </p>
+          <div class="result-actions-row">
+            <button class="quiz-retake-btn" id="quizRetakeBtn" type="button">
+              <span>Try Again ↺</span>
+            </button>
+            <button class="four-point-star-btn" id="starToSkyBtn" type="button" aria-label="Look up at the stars">
+              <span class="four-point-star-icon">✦</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

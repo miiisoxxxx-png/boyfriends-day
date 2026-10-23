@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open When... ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav" aria-label="Page Navigation">
+    <a href="same-sky.html" class="page-nav-back">
+      <span>← Back</span>
+    </a>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- PAGE 6: OPEN WHEN... (5 HORIZONTAL HEARTS) -->
+    <section class="screen letters-screen active" id="lettersScreen">
+      <div class="letters-header">
+        <div class="tag-pill">
+          <svg class="mini-heart" viewBox="0 0 24 24" fill="#5D0703">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>Handwritten Letters</span>
+        </div>
+        <h2 class="section-title">Open When...</h2>
+        <p class="section-subtitle">Little letters for the moments you need me.</p>
+      </div>
+
+      <!-- Centered Single Horizontal Row of Exactly Five Small Hearts -->
+      <div class="open-when-row-wrapper">
+        <div class="open-when-hearts-row" id="openWhenHeartsRow">
+          
+          <!-- Heart 1: Missing Me -->
+          <div class="heart-col-item" data-index="0" id="heartCol0">
+            <button class="heart-icon-btn" id="heartBtn0" type="button" aria-label="Open when you're missing me" tabindex="0">
+              <svg class="heart-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </button>
+            <span class="heart-col-label">Open when you're missing me</span>
+          </div>
+
+          <!-- Heart 2: Bad Day -->
+          <div class="heart-col-item" data-index="1" id="heartCol1">
+            <button class="heart-icon-btn" id="heartBtn1" type="button" aria-label="Open when you're having a bad day" tabindex="0">
+              <svg class="heart-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </button>
+            <span class="heart-col-label">Open when you're having a bad day</span>
+          </div>
+
+          <!-- Heart 3: Need Motivation -->
+          <div class="heart-col-item" data-index="2" id="heartCol2">
+            <button class="heart-icon-btn" id="heartBtn2" type="button" aria-label="Open when you need motivation" tabindex="0">
+              <svg class="heart-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </button>
+            <span class="heart-col-label">Open when you need motivation</span>
+          </div>
+
+          <!-- Heart 4: Annoyed At Me -->
+          <div class="heart-col-item" data-index="3" id="heartCol3">
+            <button class="heart-icon-btn" id="heartBtn3" type="button" aria-label="Open when you're annoyed at me" tabindex="0">
+              <svg class="heart-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </button>
+            <span class="heart-col-label">Open when you're annoyed at me</span>
+          </div>
+
+          <!-- Heart 5: How Much I Love You -->
+          <div class="heart-col-item" data-index="4" id="heartCol4">
+            <button class="heart-icon-btn" id="heartBtn4" type="button" aria-label="Open when you want to know how much I love you" tabindex="0">
+              <svg class="heart-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </button>
+            <span class="heart-col-label">Open when you want to know how much I love you</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Zooming Heart Animation Anchor -->
+      <div class="expanding-heart-zoomer" id="expandingHeartZoomer" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="#5D0703">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <!-- Subtitle prompt note -->
+      <div class="letters-status-box">
+        <p class="letters-hint-note" id="lettersHintNote">Choose one carefully... ♡</p>
+      </div>
+
+      <!-- Transition to The Question Section -->
+      <div class="section-transition-box">
+        <a href="one-more-thing.html" class="next-section-btn" id="goToQuestionBtn">
+          <span>One More Thing... →</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FULLSCREEN BURGUNDY LETTER EXPANSION OVERLAY (FIXED VIEWPORT) -->
+  <div class="heart-zoom-overlay" id="heartZoomOverlay" aria-hidden="true">
+    <div class="fullscreen-letter-container">
+      
+      <!-- Navigation bar -->
+      <div class="fullscreen-letter-nav">
+        <button class="letter-back-btn" id="letterBackBtn" type="button" aria-label="Close letter">
+          <span>← close letter</span>
+        </button>
+        <span class="letter-read-tag" id="letterReadTag">Letter ♡</span>
+      </div>
+
+      <!-- Letter Content Area -->
+      <div class="fullscreen-letter-scroll">
+        <div class="fullscreen-letter-content">
+          <h3 class="fullscreen-letter-title" id="fullscreenLetterTitle">Open when...</h3>
+          <div class="fullscreen-letter-divider"></div>
+          <div class="fullscreen-letter-text" id="fullscreenLetterText">
+            <!-- Letter text inserted here -->
+          </div>
+          <div class="fullscreen-letter-ending">
+            <span class="ending-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ALL LETTERS OPENED REWARD POP-UP -->
+  <div class="all-opened-modal-overlay" id="allLettersModal" aria-hidden="true">
+    <div class="all-opened-backdrop" id="allLettersBackdrop"></div>
+    <div class="all-opened-card">
+      <h3 class="all-opened-title">You opened all of them. ♡</h3>
+      <p class="all-opened-subtitle">I hope you know just how loved you are.</p>
+      <div style="display: flex; gap: 0.8rem; align-items: center; margin-top: 0.6rem;">
+        <button class="all-opened-close-btn" id="allLettersCloseBtn" type="button" aria-label="Close pop-up">
+          <span>♡</span>
+        </button>
+        <a href="one-more-thing.html" class="next-section-btn" style="padding: 0.65rem 1.4rem; font-size: 0.88rem;">
+          <span>One More Thing... →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Little Something For You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script>window.location.replace("secret-coupon.html");</script>
+</head>
+<body>
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav" aria-label="Page Navigation">
+    <a href="songs.html" class="page-nav-back">
+      <span>← Back</span>
+    </a>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- PAGE 4: A LITTLE SOMETHING FOR YOU (VINTAGE SPECIAL COUPON) -->
+    <section class="screen coupon-screen active" id="couponScreen">
+      <div class="coupon-header">
+        <div class="tag-pill">
+          <svg class="mini-heart" viewBox="0 0 24 24" fill="#5D0703">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>Special Voucher</span>
+        </div>
+        <h2 class="section-title">A Little Something For You</h2>
+        <p class="section-subtitle">A special lifetime ticket made specifically for you</p>
+      </div>
+
+      <!-- Vintage Coupon Card Container -->
+      <div class="coupon-wrapper">
+        <div class="vintage-coupon" id="vintageCoupon" role="button" tabindex="0" aria-label="Special Edition Coupon: Infinite Kisses">
+          
+          <!-- Left & Right Perforated Ticket Notches -->
+          <div class="coupon-notch notch-left" aria-hidden="true"></div>
+          <div class="coupon-notch notch-right" aria-hidden="true"></div>
+
+          <!-- Coupon Inner Frame -->
+          <div class="coupon-inner-frame">
+            
+            <!-- Top Bar: Serial & Stamp -->
+            <div class="coupon-top-bar">
+              <span class="coupon-serial">№ INFINITE-2027-KISS</span>
+              <div class="coupon-stamp-badge">
+                <span>SPECIAL EDITION ♡</span>
+              </div>
+            </div>
+
+            <!-- Coupon Title -->
+            <div class="coupon-heading-box">
+              <span class="coupon-sub-tag">★ OFFICIAL ADMISSION ★</span>
+              <h3 class="coupon-main-title">FREE COUPON</h3>
+            </div>
+
+            <!-- Main Offer -->
+            <div class="coupon-offer-box">
+              <p class="coupon-offer-prompt">Use this to get:</p>
+              <h4 class="coupon-reward-title">INFINITE KISSES ♡</h4>
+            </div>
+
+            <!-- Validity Date -->
+            <div class="coupon-validity-box">
+              <span class="valid-label">VALID UNTIL:</span>
+              <span class="valid-date">03/10/2027</span>
+            </div>
+
+            <!-- Perforation Divider -->
+            <div class="coupon-divider-dashed" aria-hidden="true">
+              <span class="cut-scissors">✂</span>
+            </div>
+
+            <!-- Playful Terms -->
+            <div class="coupon-fine-print">
+              <p class="fine-print-item">“No expiration extensions required.”</p>
+              <p class="fine-print-item">“Redeem whenever you need one.”</p>
+              <p class="fine-print-item">“Non-transferable. Obviously.”</p>
+            </div>
+
+            <!-- Redemption Message (Revealed on click) -->
+            <div class="coupon-redeemed-banner" id="couponRedeemedBanner" style="display: none;">
+              <div class="redeemed-badge">
+                <svg class="redeemed-heart-icon" viewBox="0 0 24 24" fill="#5D0703">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span class="redeemed-title">Coupon redeemed ♡</span>
+              </div>
+              <p class="redeemed-subtext">Your unlimited-kiss balance has been restored.</p>
+            </div>
+
+            <!-- Redeem Action Button -->
+            <div class="coupon-action-row">
+              <button class="coupon-redeem-btn" id="couponRedeemBtn" type="button">
+                <span>REDEEM</span>
+              </button>
+            </div>
+
+            <!-- Bottom Exclusive Tag -->
+            <div class="coupon-footer-note">
+              <span>Made exclusively for you.</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition to Boyfriend Test Section -->
+      <div class="section-transition-box">
+        <a href="quiz.html" class="next-section-btn" id="goToQuizBtn">
+          <span>Boyfriend Test →</span>
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

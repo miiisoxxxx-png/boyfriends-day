@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under The Same Sky ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="same-sky-page">
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav sky-top-nav" id="skyTopNav" aria-label="Page Navigation">
+    <a href="quiz.html" class="page-nav-back sky-nav-back" id="skyBackNavBtn">
+      <span>← Boyfriend Test</span>
+    </a>
+
+    <!-- Subtle Night Sky Music Control -->
+    <div class="sky-music-widget" id="skyMusicWidget">
+      <button class="sky-music-btn" id="skyMusicBtn" type="button" aria-label="Toggle Background Music">
+        <span class="sky-music-icon" id="skyMusicIcon">♫</span>
+        <span class="sky-music-label" id="skyMusicLabel">Music</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Scene Wrapper (Lo-Fi Night Sky Background Image) -->
+  <main class="sky-scene-wrapper" id="skySceneWrapper">
+    
+    <!-- Background Image Layer (Original High-Res Photograph) -->
+    <div class="sky-bg-layer" id="skyBgLayer" aria-hidden="true"></div>
+
+    <!-- Interactive Layer positioned randomly across the upper night sky -->
+    <div class="constellation-container" id="constellationContainer">
+      
+      <!-- 9 Interactive Hit Buttons randomly scattered across the night sky -->
+      <!-- Star 1: Upper Left Sky -->
+      <button class="sky-star-btn star-node-1" data-star="0" id="starBtn0" type="button" aria-label="Star 1: You're my yellow">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 2: Top Left Sky -->
+      <button class="sky-star-btn star-node-2" data-star="1" id="starBtn1" type="button" aria-label="Star 2: Come home to">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 3: Upper Mid-Center Sky -->
+      <button class="sky-star-btn star-node-3" data-star="2" id="starBtn2" type="button" aria-label="Star 3: ida banks poem">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 4: Top Right Sky -->
+      <button class="sky-star-btn star-node-4" data-star="3" id="starBtn3" type="button" aria-label="Star 4: How could I ever get tired">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 5: Upper Mid-Right Sky -->
+      <button class="sky-star-btn star-node-5" data-star="4" id="starBtn4" type="button" aria-label="Star 5: Feels like home">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 6: Far Right Sky -->
+      <button class="sky-star-btn star-node-6" data-star="5" id="starBtn5" type="button" aria-label="Star 6: Collision of stars">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 7: Mid-Left Sky -->
+      <button class="sky-star-btn star-node-7" data-star="6" id="starBtn6" type="button" aria-label="Star 7: Where the sky ends">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 8: Mid-Right Sky -->
+      <button class="sky-star-btn star-node-8" data-star="7" id="starBtn7" type="button" aria-label="Star 8: Insane not to love you">
+        <span class="existing-dot-glow"></span>
+      </button>
+
+      <!-- Star 9: Special Upper Sky Star -->
+      <button class="sky-star-btn star-node-9 special-star" data-star="8" id="starBtn8" type="button" aria-label="Star 9: The Special One - I'd Choose You">
+        <span class="existing-dot-glow special-dot"></span>
+      </button>
+
+    </div>
+
+    <!-- Completion Banner (Revealed when all 9 stars opened) -->
+    <div class="sky-completion-banner" id="skyCompletionBanner" style="display: none;">
+      <span>You found every little piece. ♡</span>
+    </div>
+
+    <!-- Subtle Bottom Navigation Button (Envelope Icon -> Open When...) -->
+    <div class="sky-bottom-nav-box" id="skyBottomNav">
+      <a href="open-when.html" class="sky-envelope-nav-btn" aria-label="Next Page: Open When..." title="Next: Open When...">
+        <svg class="sky-envelope-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Zooming Glowing Star Dot Element for Transition -->
+  <div class="expanding-star-zoomer" id="expandingStarZoomer" aria-hidden="true">
+    <div class="zoomer-star-dot"></div>
+  </div>
+
+  <!-- Fullscreen Star Message Overlay (Cream Background #EEDCC8, Burgundy Text #5D0703) -->
+  <div class="star-message-overlay" id="starMessageOverlay" aria-hidden="true">
+    <div class="star-message-container">
+      
+      <!-- Navigation inside Message Overlay -->
+      <div class="star-message-nav">
+        <button class="star-back-btn" id="starBackBtn" type="button" aria-label="Back to the stars">
+          <span>← back to the stars</span>
+        </button>
+        <span class="star-number-tag" id="starNumberTag">Star 01 ♡</span>
+      </div>
+
+      <!-- Message Content Scroll Area -->
+      <div class="star-message-scroll">
+        <div class="star-message-card" id="starMessageCard">
+          <div class="star-card-icon" id="starCardIcon">✨</div>
+          
+          <div class="star-message-body" id="starMessageBody">
+            <!-- Message text populated dynamically by script.js -->
+          </div>
+
+          <div class="star-card-ending">
+            <span class="ending-star">♡</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

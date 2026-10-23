@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Question ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav" aria-label="Page Navigation">
+    <a href="one-more-thing.html" class="page-nav-back">
+      <span>← Back</span>
+    </a>
+
+    <!-- Background Music Control Widget -->
+    <div class="question-music-widget" id="questionMusicWidget">
+      <!-- Fallback Prompt when Autoplay is Blocked -->
+      <button class="music-tap-prompt" id="musicTapPrompt" type="button" style="display: none;">
+        <span>♫ Tap for music</span>
+      </button>
+
+      <!-- Music Play/Pause Toggle Button -->
+      <button class="question-music-btn" id="questionMusicBtn" type="button" aria-label="Toggle Background Music" title="Toggle background music">
+        <span class="music-note-icon">♫</span>
+        <span class="equalizer-bars mini" id="questionEqualizer" aria-hidden="true">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- PAGE: THE QUESTION -->
+    <section class="screen question-screen active" id="questionScreen">
+      
+      <div class="question-card-wrapper" id="questionCardWrapper">
+        
+        <!-- Question Prompt Area (Fades out after YES) -->
+        <div class="question-prompt-box" id="questionPromptBox">
+          <p class="question-intro-tag">Okay... one last question ♡</p>
+          
+          <h1 class="question-title">Do you wanna be my boyfriend?</h1>
+          
+          <p class="question-subtitle" id="questionSubtitle">
+            Lol, you're already mine...<br>
+            but I still wanna ask properly. 😭♡
+          </p>
+
+          <div class="question-buttons-wrapper" id="questionButtonsWrapper">
+            <button class="btn-question-yes" id="yesBtn" type="button">
+              <span>YES, OBVIOUSLY ♡</span>
+            </button>
+            <button class="btn-question-think" id="thinkBtn" type="button">
+              <span>Hmm... let me think</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Success / Accepted View (Revealed after YES) -->
+        <div class="question-success-box" id="questionSuccessBox" style="display: none;">
+          <div class="success-heart-icon">💍</div>
+          <h2 class="success-title">YAY. I KNEW IT. ♡</h2>
+          <p class="success-subtitle">Guess I'll keep you then.</p>
+          <div class="success-action-area">
+            <a href="final-page.html" class="congrats-exclamation-btn" id="congratsExclamationBtn" aria-label="Special surprise" title="Special surprise">
+              <span class="exclamation-symbol">!</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

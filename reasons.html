@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reasons I Love You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating ambient hearts container in background -->
+  <div class="ambient-hearts-container" id="ambientHearts" aria-hidden="true"></div>
+
+  <!-- Page Top Navigation -->
+  <nav class="page-top-nav" aria-label="Page Navigation">
+    <a href="index.html" class="page-nav-back">
+      <span>← Back</span>
+    </a>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- PAGE 2: RANDOM REASON I LOVE YOU -->
+    <section class="screen reasons-screen active" id="reasonsScreen">
+      
+      <!-- Top Main Title -->
+      <div class="reasons-header-clean">
+        <h1 class="clean-section-title">Random Reason <br>I Love You</h1>
+      </div>
+
+      <!-- Center Interactive Big Dice -->
+      <div class="big-dice-container">
+        <button class="big-dice-btn" id="diceBtn" type="button" aria-label="Roll the dice to reveal a reason">
+          <span class="big-dice-icon" id="diceIcon">🎲</span>
+          <span class="dice-sub-tag">click me ♡</span>
+        </button>
+      </div>
+
+      <!-- Bottom Reason Display Box -->
+      <div class="big-reason-box" id="reasonDisplayCard">
+        <p class="big-reason-text" id="reasonText">Click the dice ♡</p>
+      </div>
+
+    </section>
+
+    <!-- Small DVD Player Icon Navigation (Right Corner -> If You Were A Song) -->
+    <div class="dvd-nav-box" id="dvdNavBox">
+      <a href="songs.html" class="dvd-player-nav-btn" id="goToMusicBtn" aria-label="If You Were A Song" title="If You Were A Song">
+        <svg class="dvd-player-icon" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+          <!-- DVD Player Deck Frame -->
+          <rect x="3" y="14" width="26" height="13" rx="3.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <!-- DVD Disc Slot Line -->
+          <line x1="7" y1="20.5" x2="19" y2="20.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Indicator LED Light -->
+          <circle cx="24.5" cy="20.5" r="1.5" fill="currentColor"/>
+          <!-- DVD Disc Ejecting / Spinning Top -->
+          <circle cx="16" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="16" cy="11" r="2" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- CELEBRATION MODAL (Kissing Emoji) -->
+  <div class="kiss-modal-overlay" id="kissModal" aria-hidden="true">
+    <div class="kiss-modal-backdrop" id="kissModalBackdrop"></div>
+    <div class="kiss-modal-card">
+      <div class="kiss-emoji-wrapper">
+        <span class="big-kiss-emoji">😘</span>
+      </div>
+      <h3 class="kiss-title">I LOVE YOU TILL INFINITYY!!!!!</h3>
+      <p class="kiss-subtitle">Sending you the biggest kiss ever.</p>
+      <div class="kiss-modal-actions">
+        <button class="kiss-close-btn" id="kissCloseBtn" type="button">
+          <span>Cherish My Reasons ♥</span>
+        </button>
+        <a href="songs.html" class="kiss-continue-btn" id="kissContinueBtn">
+          <span>If You Were A Song ♪</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
