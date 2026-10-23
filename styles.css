@@ -5656,3 +5656,113 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
     height: 160px !important;
   }
 }
+
+/* ==========================================================================
+   MOBILE TEST FIXES — from real viewport measurements at 320/360/390/430px
+   and 844x390 landscape. No content removed; only tap sizes and the
+   landscape songs layout are tightened.
+   ========================================================================== */
+@media (max-width: 820px) {
+  .page-nav-back, .next-section-btn, .letter-back-btn, .star-back-btn,
+  .kiss-close-btn, .sky-music-btn, .question-music-btn, .music-tap-prompt {
+    min-height: 44px;
+  }
+  .next-section-btn, .page-nav-back {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .letter-back-btn, .star-back-btn { padding: 0.7rem 1.2rem; }
+  .sky-music-btn, .question-music-btn, .music-tap-prompt {
+    min-height: 44px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+  .all-opened-close-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .sky-star-btn, .question-music-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+@media (max-width: 360px) {
+  /* Keep stars at a full finger size even on the smallest phones. */
+  .sky-star-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+/* Landscape phones (short screen, wider than 820px): use the same single-column
+   songs layout as portrait phones, so the vinyl is fully visible instead of
+   hanging half off the left edge by design. */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 900px) {
+  body.songs-page {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  body.songs-page .main-wrapper { min-height: 0; }
+  .playlist-poster-screen {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    align-items: start;
+    padding: 0.5rem 1rem 6rem;
+  }
+  .playlist-left-section, .playlist-center-section, .playlist-right-section {
+    height: auto;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .semicircle-vinyl-wrapper {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 160px;
+    height: 160px;
+    margin: 0.5rem auto 0;
+  }
+  .semicircle-progress-svg { display: none; }
+  .vinyl-disc-container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 160px !important;
+    height: 160px !important;
+  }
+  .vinyl-center-label { width: 56px !important; height: 56px !important; }
+  .vinyl-play-controls {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0.75rem auto 0;
+  }
+  .page-nav-back, .next-section-btn { min-height: 48px; }
+}
+
+/* Landscape: visible top-bar controls also get a full finger height. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .page-nav-back, .sky-music-btn, .question-music-btn, .music-tap-prompt,
+  .kiss-close-btn, .star-back-btn, .letter-back-btn {
+    min-height: 44px;
+  }
+  .sky-music-btn, .question-music-btn, .music-tap-prompt {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+}
