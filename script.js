@@ -92,6 +92,7 @@ const songs = [
 const openedCards = new Set();
 let currentSongIndex = 0;
 const audioPlayer = new Audio();
+audioPlayer.preload = "metadata";
 let isFallbackAttempt = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -125,7 +126,8 @@ function initAmbientHearts() {
     `<svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`
   ];
 
-  const totalHearts = 16;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const totalHearts = window.innerWidth <= 480 ? 7 : window.innerWidth <= 820 ? 10 : 16;
   for (let i = 0; i < totalHearts; i++) {
     const heartEl = document.createElement("div");
     heartEl.className = "ambient-heart";
@@ -222,6 +224,8 @@ function initReasonMachine() {
 // 5. HEART EXPLOSION EFFECT
 // ==========================================================================
 function triggerHeartExplosion(x, y, count = 10) {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (window.innerWidth <= 480) count = Math.min(count, 8);
   const heartSvg = `<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
 
   for (let i = 0; i < count; i++) {
@@ -1316,6 +1320,7 @@ function setupQuestionAudio() {
   // Single audio instance with exact local MP3 path requested
   const primarySrc = "assets/audio/boyfriend-final.mp3";
   questionBgAudio = new Audio(primarySrc);
+  questionBgAudio.preload = "metadata";
   questionBgAudio.loop = true;
   questionBgAudio.volume = 0.50; // ~50% volume
 
@@ -1888,6 +1893,7 @@ function initSameSkySection() {
   if (!nightSkyBgAudio) {
     const primarySrc = "assets/audio/night-sky-bgm.mp3";
     nightSkyBgAudio = new Audio(primarySrc);
+    nightSkyBgAudio.preload = "metadata";
     nightSkyBgAudio.loop = true;
     nightSkyBgAudio.volume = 0.85; // Set volume to 85%
 

@@ -5397,3 +5397,262 @@ body.final-dreamy-page {
 
 
 
+
+/* ==========================================================================
+   MOBILE OPTIMISATION — appended, no existing content removed
+   Targets Android / Chrome on phones. Desktop rules above are untouched;
+   these rules only tighten layout at small widths, fix 100vh address-bar
+   jumps, enlarge touch targets, and calm animations on low-power phones.
+   ========================================================================== */
+
+/* --- Global mobile safety net (all widths) --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+img, svg, video {
+  max-width: 100%;
+}
+img {
+  height: auto;
+}
+a, button, [role="button"], input, select, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(93, 7, 3, 0.18);
+}
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 3px;
+}
+/* Flex/grid children must be allowed to shrink, or long words force overflow. */
+.screen > *, .main-wrapper > *, .playlist-poster-screen > * {
+  min-width: 0;
+}
+/* Address-bar safe heights: dvh first where supported, 100vh as fallback. */
+.screen, .main-wrapper, body.songs-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+}
+/* Touch devices: hover styles must not stick after a tap. :active still gives feedback. */
+@media (hover: none) {
+  .next-section-btn:hover, .page-nav-back:hover, .enter-button:hover,
+  .song-tab-btn:hover, .audio-play-btn:hover, .heart-nav-next-btn:hover,
+  .quiz-option-btn:hover, .coupon-redeem-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+/* Respect reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ambient-hearts-container { display: none !important; }
+}
+
+/* --- Phones: 820px and below --- */
+@media (max-width: 820px) {
+  .screen {
+    padding: 1.25rem 1rem calc(2rem + env(safe-area-inset-bottom));
+    padding-left: calc(1rem + env(safe-area-inset-left));
+    padding-right: calc(1rem + env(safe-area-inset-right));
+  }
+  .page-top-nav {
+    padding: 1rem 1rem 0;
+    padding-left: calc(1rem + env(safe-area-inset-left));
+    padding-right: calc(1rem + env(safe-area-inset-right));
+  }
+  /* Every tappable control: at least a comfortable finger target. */
+  .page-nav-back, .next-section-btn, .enter-button, .quiz-option-btn,
+  .coupon-redeem-btn, .finale-trigger-btn, .secret-unlock-submit-btn,
+  .final-home-btn, .congrats-exclamation-btn {
+    min-height: 44px;
+  }
+  .page-nav-back, .next-section-btn {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  .heart-nav-next-btn.bottom-right, .dvd-nav-box, .dvd-player-nav-btn {
+    bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    right: calc(1rem + env(safe-area-inset-right)) !important;
+  }
+  .heart-nav-next-btn.bottom-right {
+    width: 52px;
+    height: 52px;
+  }
+  /* Cards and text never exceed the screen, and long words wrap. */
+  .hero-card, .quiz-card, .coupon-screen, .letters-screen,
+  .fullscreen-letter-container, .lyric-quote-card, .vintage-coupon {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .hero-card { padding: 2rem 1.25rem; }
+  .hero-screen { overflow-y: auto; }
+  /* Grids that were multi-column on desktop become one column. */
+  .cards-grid, .reasons-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* --- Songs page: the biggest mobile breakage ---
+     Was a fixed 100vh, 3-column grid (240px + 1fr + 340px) with a 360px
+     vinyl disc hanging off the left edge. On a phone it becomes a
+     scrollable single column with a centred, fully visible vinyl. */
+  body.songs-page {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  body.songs-page .main-wrapper { min-height: 0; }
+  .playlist-top-nav { padding: 1rem 1rem 0; }
+  .playlist-poster-screen {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    align-items: start;
+    padding: 0.5rem 1rem 6.5rem;
+  }
+  .playlist-left-section, .playlist-center-section, .playlist-right-section {
+    height: auto;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .semicircle-vinyl-wrapper {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 210px;
+    height: 210px;
+    margin: 0.5rem auto 0;
+  }
+  .semicircle-progress-svg { display: none; }
+  .vinyl-disc-container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 210px !important;
+    height: 210px !important;
+  }
+  .vinyl-center-label { width: 72px !important; height: 72px !important; }
+  .vinyl-play-controls {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0.75rem auto 0;
+  }
+  .playlist-center-section .song-tabs-list { max-width: 100%; }
+  .playlist-center-section .song-tab-btn {
+    min-height: 56px;
+    padding: 0.65rem 0.9rem;
+  }
+  .playlist-search-pill {
+    max-width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .lyric-quote-card { padding: 1.4rem 1.25rem; gap: 1rem; }
+  /* --- Same-sky page: smaller background, fitting constellation --- */
+  .sky-bg-layer, .star-field-bg-preview {
+    width: 100% !important;
+    height: 100dvh !important;
+    background-image: url('assets/images/same-sky-bg-mobile.jpg'), url('assets/same-sky-bg.jpg') !important;
+  }
+  .constellation-container {
+    width: min(340px, 92vw) !important;
+    height: 280px !important;
+    max-width: 92vw;
+  }
+  .sky-star-btn { min-width: 44px; min-height: 44px; }
+  /* --- Open-when hearts: 3 per row at any phone width, not a fixed 340px box --- */
+  .open-when-hearts-row {
+    max-width: 100% !important;
+    gap: 1rem 0.5rem !important;
+  }
+  .heart-col-item {
+    width: calc((100% - 1rem) / 3) !important;
+    max-width: none !important;
+  }
+  .heart-icon-btn { width: 48px; height: 48px; }
+  /* Modals / fullscreen letters scroll inside the screen, not off it. */
+  .fullscreen-letter-container {
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+  }
+  .kiss-modal-card, .all-letters-modal {
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+  }
+  /* Fixed overlays that used 100vw (which includes the scrollbar on Android). */
+  .sky-bg-layer { width: 100% !important; }
+}
+
+/* --- Small phones: 480px and below --- */
+@media (max-width: 480px) {
+  .screen { padding: 1rem 0.9rem calc(1.75rem + env(safe-area-inset-bottom)); }
+  .hero-heading { font-size: clamp(1.9rem, 11vw, 2.3rem); }
+  .section-title { font-size: clamp(1.7rem, 9vw, 2.1rem); }
+  .hero-card { padding: 1.75rem 1.1rem; border-radius: 22px; }
+  .enter-button, .next-section-btn { width: 100%; justify-content: center; }
+  .quiz-option-btn { width: 100%; }
+  .spotify-card { min-height: 0; }
+  .vintage-coupon { padding: 0.9rem; }
+  .coupon-inner-frame { padding: 1.25rem 0.9rem; }
+  .semicircle-vinyl-wrapper, .vinyl-disc-container {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .vinyl-center-label { width: 62px !important; height: 62px !important; }
+  .constellation-container { height: 250px !important; }
+  .sky-intro-tag { font-size: 1.5rem; }
+  .star-message-body { font-size: 1.05rem; }
+}
+
+/* --- Very small phones: 360px and below, including 320px --- */
+@media (max-width: 360px) {
+  .screen { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .hero-heading { font-size: 1.85rem; }
+  .hero-body { font-size: 0.95rem; }
+  .heart-col-label { font-size: 0.68rem; }
+  .heart-icon-btn { width: 44px; height: 44px; }
+  .open-when-hearts-row { gap: 0.85rem 0.4rem !important; }
+  .semicircle-vinyl-wrapper, .vinyl-disc-container {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  .song-card-title { font-size: 0.92rem; }
+  .lyric-quote-text { font-size: 1.05rem; }
+  .constellation-container { height: 230px !important; }
+  .sky-star-btn { width: 40px; height: 40px; min-width: 40px; min-height: 40px; }
+}
+
+/* --- Landscape phones: short screens must scroll, not clip --- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .screen, .hero-screen {
+    min-height: 0;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+  .hero-card { padding: 1.5rem 1.25rem; margin: auto; }
+  body.songs-page { height: auto; max-height: none; overflow-y: auto; }
+  .playlist-poster-screen { height: auto; min-height: 0; overflow: visible; }
+  .semicircle-vinyl-wrapper, .vinyl-disc-container {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
